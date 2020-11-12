@@ -1,3 +1,3 @@
-file '/srv/www/wordpress/current/wp-login.php' do
+bfile '/srv/www/ebizzness/current/wp-login.php' do
     action :delete
 end
