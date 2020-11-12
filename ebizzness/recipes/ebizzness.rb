@@ -4,10 +4,7 @@ execute "Clone ebizzness from GitHub" do
   action :run
 end
 
-# Create the root directory and set the permissions and owners
-directory node['ebizzness']['document_root'] do
-  owner 'apache'
-  group 'apache'
-  mode '0755'
-  recursive true
+execute "set the directory permissions and owners" do
+  command "chown -R apache:apache /srv/www/ebizzness/current; chmod 0755 -R /srv/www/ebizzness/current"
+  action :run
 end
