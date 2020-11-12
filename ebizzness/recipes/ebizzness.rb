@@ -1,6 +1,6 @@
 # Clone ebizzness from GitHub
 execute "Clone ebizzness from GitHub" do
-  command "cd /srv/www/ebizzness/current; rm * .*; git clone https://github.com/cct123/ebizzness.git ."
+  command "cd /srv/www/ebizzness/current; rm -rf * .*; git clone https://github.com/cct123/ebizzness.git ."
   action :run
 end
 
