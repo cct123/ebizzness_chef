@@ -18,6 +18,9 @@
  * @package WordPress
  */
 
+define('WP_HOME','ebizzness-267444212.us-east-2.elb.amazonaws.com');
+define('WP_SITEURL','ebizzness-267444212.us-east-2.elb.amazonaws.com');
+
 define( 'AS3CF_SETTINGS', serialize( array(
     'provider' => 'aws',
     'access-key-id' => 'AKIA6KXKDFAUMMBBOC36',
