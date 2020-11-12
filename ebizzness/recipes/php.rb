@@ -1,5 +1,10 @@
 # Install PHP and its modules
-%w{php72 php72-cli php72-common php72-fpm php72-mbstring php72-mysqlnd php72-pdo  php72-xml php72-curl php72-imagick}.each do |pkg|
+execute "amazon-linux-extras" do
+  command "amazon-linux-extras enable php7.2; sudo yum update"
+  action :run
+end
+  
+%w{php php-cli php-common php-fpm php-mbstring php-mysqlnd php-pdo  php-xml php-curl php-imagick}.each do |pkg|
   package pkg do
     action :install
     notifies :reload, 'service[httpd]', :immediately
