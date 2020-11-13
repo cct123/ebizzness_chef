@@ -1,6 +1,6 @@
 # Install PHP and its modules
 execute "amazon-linux-extras" do
-  command "amazon-linux-extras enable php7.4; sudo yum clean metadata"
+  command "amazon-linux-extras disable php7.4; amazon-linux-extras disable php7.2; amazon-linux-extras enable php7.3; sudo yum clean metadata"
   action :run
 end
   
@@ -10,22 +10,12 @@ end
   end
 end
 
-execute "install php74-php-pecl-imagick" do
+execute "install php-imagick" do
   command "yum install epel-release –y"
   action :run
 end
 
-execute "install php74-php-pecl-imagick" do
-  command "amazon-linux-extras install epel"
-  action :run
-end
-
-execute "install php74-php-pecl-imagick" do
-  command "yum -y install http://rpms.remirepo.net/enterprise/remi-release-7.rpm"
-  action :run
-end
-
-execute "install php74-php-pecl-imagick" do
-  command "yum --enablerepo=remi install php74-php-pecl-imagick"
-  action :run
+# Enable start on boot and start Apache
+service 'httpd' do
+  action [:enable, :start]
 end
