@@ -11,6 +11,21 @@ end
 end
 
 execute "install php74-php-pecl-imagick" do
-  command "yum install epel-release –y; amazon-linux-extras install epel; yum -y install http://rpms.remirepo.net/enterprise/remi-release-7.rpm; yum --enablerepo=remi install php74-php-pecl-imagick"
+  command "yum install epel-release –y"
+  action :run
+end
+
+execute "install php74-php-pecl-imagick" do
+  command "amazon-linux-extras install epel"
+  action :run
+end
+
+execute "install php74-php-pecl-imagick" do
+  command "yum -y install http://rpms.remirepo.net/enterprise/remi-release-7.rpm"
+  action :run
+end
+
+execute "install php74-php-pecl-imagick" do
+  command "yum --enablerepo=remi install php74-php-pecl-imagick"
   action :run
 end
