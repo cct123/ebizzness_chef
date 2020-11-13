@@ -4,10 +4,15 @@ execute "amazon-linux-extras" do
   action :run
 end
   
-%w{php php-cli php-common php-fpm php-mbstring php-mysqlnd php-pdo php-pear php-cgi php-xml php-curl php-gettext php-json php-fpm php-intl php-zip imagick}.each do |pkg|
+%w{php php-cli php-common php-fpm php-mbstring php-mysqlnd php-pdo php-pear php-cgi php-xml php-curl php-gettext php-json php-fpm php-intl php-zip}.each do |pkg|
   package pkg do
     action :install
   end
+end
+
+execute "install imagick" do
+  command "sudo yum install php-imagick -y"
+  action :run
 end
 
 # Enable start on boot and start Apache
