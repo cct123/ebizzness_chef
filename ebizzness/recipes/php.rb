@@ -11,7 +11,7 @@ end
 end
 
 execute "install php-imagick" do
-  command "yum install epel-release –y"
+  command "yum install php-imagick –y"
   action :run
 end
 
