@@ -21,6 +21,11 @@
 define('WP_HOME', 'ebizzness-475820339.us-east-2.elb.amazonaws.com')
 define('WP_SITEURL','ebizzness-475820339.us-east-2.elb.amazonaws.com')
 */
+define('WP_HOME','https://www.ebizzness.cf');
+define('WP_SITEURL','https://www.ebizzness.cf');
+
+if (strpos($_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') !== false)
+       $_SERVER['HTTPS']='on';
 
 define( 'AS3CF_SETTINGS', serialize( array(
     'provider' => 'aws',
