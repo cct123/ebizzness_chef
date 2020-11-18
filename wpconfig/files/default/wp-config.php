@@ -24,7 +24,7 @@ define('WP_SITEURL','https://www.ebizzness.cf');
 
 define( 'WP_HOME', 'https://' . $_SERVER['HTTP_HOST']);
 define( 'WP_SITEURL', WP_HOME );
-
+define('FORCE_SSL_ADMIN', true);
 
 if (strpos($_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') !== false)
        $_SERVER['HTTPS']='on';
