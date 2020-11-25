@@ -21,6 +21,9 @@
 define('WP_HOME','https://www.ebizzness.cf');
 define('WP_SITEURL','https://www.ebizzness.cf');
 */
+define('WP_CACHE', true);
+define( 'WP_REDIS_HOST', 'ebizzness.vobb4t.0001.use2.cache.amazonaws.com' );
+define('WP_CACHE_KEY_SALT', 'ebizzness.vobb4t.0001.use2.cache.amazonaws.com');
 
 define( 'WP_HOME', 'https://' . $_SERVER['HTTP_HOST']);
 define( 'WP_SITEURL', WP_HOME );
